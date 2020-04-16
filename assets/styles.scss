@@ -1,0 +1,164 @@
+// Imports
+@font-face {
+	font-family: 'Forma Nuova Corsiva';
+	src: url('/styles/webfonts/formanuova-corsiva.eot');
+	src: url('/styles/webfonts/formanuova-corsiva.eot?#iefix') format('embedded-opentype'),
+		url('/styles/webfonts/formanuova-corsiva.woff') format('woff'),
+		url('/styles/webfonts/formanuova-corsiva.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Forma Nuova Neretta';
+	src: url('/styles/webfonts/formanuova-neretta.eot');
+	src: url('/styles/webfonts/formanuova-neretta.eot?#iefix') format('embedded-opentype'),
+		url('/styles/webfonts/formanuova-neretta.woff') format('woff'),
+		url('/styles/webfonts/formanuova-neretta.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Grid Layout
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    .intro {
+        grid-column: 1 / span 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    .content {
+        grid-column: 3;
+        justify-self: end;
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - 30px);
+        .links {
+            margin-top: auto;
+        }
+        .clients .client-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 30px;
+            ul {
+                list-style: none;
+	            margin: 0;
+                padding: 0;
+                li {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    
+}
+
+// Base Type
+body {
+    font-family: 'Forma Nuova Neretta', Helvetica, sans-serif;
+    -moz-font-feature-settings: "ss03";
+    -webkit-font-feature-settings: "ss03";
+    font-feature-settings: "ss03";
+    font-size: 18px;
+    letter-spacing: 0.0225em;
+    color: #111111;
+    margin: 15px 30px;
+    line-height: 1.4em;
+    background-color: #9A4B4B;
+    h1 {
+        font-size: 20px;
+        font-weight: normal;
+        text-transform: uppercase;
+        letter-spacing: .035em;
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+        margin: 0 0 5px;
+        padding: 0;
+    }
+    p {
+        padding: 0;
+        margin: 0 0 30px;
+    }
+    a {
+        color: #111111;
+        text-decoration: none;
+        margin-right: 30px;
+        cursor: pointer;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    .links h2 {
+        margin: 0;
+        line-height: 1em;
+    }
+}
+
+// Slideshow
+.slideshow {
+    position: relative;
+    width: 100%;
+    grid-column: 1 / span 1;
+}
+.controls {
+    z-index: 10;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    .prev {
+    display: inline-block;
+    height: 100%;
+    width: 50%;
+      cursor: w-resize;
+    }
+    .next{
+        display: inline-block;
+        height: 100%;
+        width: 50%;
+      cursor: e-resize;
+    }
+  }
+  .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    background-color: #111;
+    .slide {
+    padding: 15px;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      &.show {
+        display: flex;
+      }
+      img {
+        height: 100%;
+        margin: 10px;
+        }
+      }
+    }
+
+
+
+
+
+
+

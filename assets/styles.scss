@@ -46,17 +46,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       column-gap: 30px;
-      ol {
+      ul {
         list-style: none;
-        line-height: 1.1em;
         margin: 0;
         padding: 0;
-        -moz-column-count: 2;
-        -moz-column-gap: 20px;
-        -webkit-column-count: 2;
-        -webkit-column-gap: 20px;
-        column-count: 2;
-        column-gap: 20px;
         li {
           margin-bottom: 5px;
         }
@@ -143,24 +136,31 @@ body {
 }
 .slider {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
   height: auto;
-  background-color: #111;
   .slide {
-    padding: 15px;
     height: 100%;
     display: none;
     justify-content: center;
     align-items: center;
     &.show {
       display: flex;
+      flex-direction: column;
     }
     img {
+      background-color: #111;
+      padding: 15px;
       height: 100%;
       width: 100%;
+    }
+    p {
+        text-align: left;
+        width: 100%;
+        padding-left: -10px;
     }
   }
 }

@@ -48,7 +48,7 @@
       column-gap: 30px;
       ul {
         list-style: none;
-        margin: 0;
+        margin: 10px 0 0;
         padding: 0;
         li {
           margin-bottom: 5px;
@@ -56,6 +56,13 @@
       }
     }
   }
+}
+
+// General
+html {
+    cursor: url("/assets/cursors/cursor.png") 16 16, default;
+    cursor: url("/assets/cursors/cursor.svg") 16 16, default;
+    cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x, url("/assets/cursors/cursor@2x.png") 2x) 16 16, default;
 }
 
 // Base Type
@@ -70,11 +77,10 @@ body {
   margin: 15px 30px;
   line-height: 1.4em;
   background-color: #9a4b4b;
-  cursor: url("/assets/cursors/cursor.svg"), auto;
   h1 {
     font-size: 20px;
     font-weight: normal;
-    // text-transform: uppercase;
+    text-transform: uppercase;
     letter-spacing: 0.015em;
     margin: 0;
     padding: 0;
@@ -83,23 +89,25 @@ body {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin: 0 0 5px;
+    margin: 0;
     padding: 0;
   }
   p {
     padding: 0;
-    margin: 0 0 30px;
+    margin: 15px 0 30px;
   }
   a {
     color: #111111;
     text-decoration: none;
     margin-right: 30px;
-    cursor: pointer;
+    cursor: url("/assets/cursors/cursor.png") 32 32, default;
+    cursor: url("/assets/cursors/cursor.svg") 32 32, default;
+    cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x, url("/assets/cursors/cursor@2x.png") 2x) 16 16, default;
     &:last-child {
       margin-right: 0;
     }
     &:hover {
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
   .links h2 {
@@ -125,13 +133,17 @@ body {
     display: inline-block;
     height: 100%;
     width: 50%;
-    cursor: url("/assets/cursors/left.svg"), w-resize;
+    cursor: url("/assets/cursors/left.png") 16 16, w-resize;
+    cursor: url("/assets/cursors/left.svg") 16 16, w-resize;
+    cursor: -webkit-image-set(url("/assets/cursors/left.png") 1x, url("/assets/cursors/left@2x.png") 2x) 16 16, w-resize;
   }
   .next {
     display: inline-block;
     height: 100%;
     width: 50%;
-    cursor: url("/assets/cursors/right.svg"), e-resize;
+    cursor: url("/assets/cursors/right.png") 16 16, e-resize;
+    cursor: url("/assets/cursors/right.svg") 16 16, e-resize;
+    cursor: -webkit-image-set(url("/assets/cursors/right.png") 1x, url("/assets/cursors/right@2x.png") 2x) 16 16, e-resize;
   }
 }
 .slider {

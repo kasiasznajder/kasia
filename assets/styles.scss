@@ -24,17 +24,17 @@
 // Grid Layout
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 30px;
   .intro {
-    grid-column: 1 / span 1;
+    grid-column: 1 / span 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
   }
   .content {
-    grid-column: 3;
+    grid-column: 4 / span 2;
     justify-self: end;
     display: flex;
     flex-direction: column;
@@ -44,14 +44,21 @@
     }
     .clients .client-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       column-gap: 30px;
       ul {
         list-style: none;
         margin: 10px 0 0;
         padding: 0;
         li {
-          margin-bottom: 5px;
+            display: inline;
+        //   margin-bottom: 5px;
+          &::after {
+              content: ", ";
+          }
+          &:last-child::after {
+              content: "";
+          }
         }
       }
     }
@@ -60,9 +67,14 @@
 
 // General
 html {
-    cursor: url("/assets/cursors/cursor.png") 16 16, default;
-    cursor: url("/assets/cursors/cursor.svg") 16 16, default;
-    cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x, url("/assets/cursors/cursor@2x.png") 2x) 16 16, default;
+  cursor: url("/assets/cursors/cursor.png") 16 16, default;
+  cursor: url("/assets/cursors/cursor.svg") 16 16, default;
+  cursor: -webkit-image-set(
+        url("/assets/cursors/cursor.png") 1x,
+        url("/assets/cursors/cursor@2x.png") 2x
+      )
+      16 16,
+    default;
 }
 
 // Base Type
@@ -71,16 +83,16 @@ body {
   -moz-font-feature-settings: "ss03";
   -webkit-font-feature-settings: "ss03";
   font-feature-settings: "ss03";
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 0.0225em;
   color: #111111;
   margin: 15px 30px;
   line-height: 1.4em;
-  background-color: #9a4b4b;
+  background-color: #a74646;
   h1 {
     font-size: 20px;
     font-weight: normal;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     letter-spacing: 0.015em;
     margin: 0;
     padding: 0;
@@ -94,7 +106,7 @@ body {
   }
   p {
     padding: 0;
-    margin: 15px 0 30px;
+    margin: 5px 0 30px;
   }
   a {
     color: #111111;
@@ -102,7 +114,12 @@ body {
     margin-right: 30px;
     cursor: url("/assets/cursors/cursor.png") 32 32, default;
     cursor: url("/assets/cursors/cursor.svg") 32 32, default;
-    cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x, url("/assets/cursors/cursor@2x.png") 2x) 16 16, default;
+    cursor: -webkit-image-set(
+          url("/assets/cursors/cursor.png") 1x,
+          url("/assets/cursors/cursor@2x.png") 2x
+        )
+        16 16,
+      default;
     &:last-child {
       margin-right: 0;
     }
@@ -120,7 +137,7 @@ body {
 .slideshow {
   position: relative;
   width: 100%;
-  grid-column: 1 / span 1;
+  grid-column: 1 / span 2;
 }
 .controls {
   z-index: 10;
@@ -135,7 +152,12 @@ body {
     width: 50%;
     cursor: url("/assets/cursors/left.png") 16 16, w-resize;
     cursor: url("/assets/cursors/left.svg") 16 16, w-resize;
-    cursor: -webkit-image-set(url("/assets/cursors/left.png") 1x, url("/assets/cursors/left@2x.png") 2x) 16 16, w-resize;
+    cursor: -webkit-image-set(
+          url("/assets/cursors/left.png") 1x,
+          url("/assets/cursors/left@2x.png") 2x
+        )
+        16 16,
+      w-resize;
   }
   .next {
     display: inline-block;
@@ -143,7 +165,12 @@ body {
     width: 50%;
     cursor: url("/assets/cursors/right.png") 16 16, e-resize;
     cursor: url("/assets/cursors/right.svg") 16 16, e-resize;
-    cursor: -webkit-image-set(url("/assets/cursors/right.png") 1x, url("/assets/cursors/right@2x.png") 2x) 16 16, e-resize;
+    cursor: -webkit-image-set(
+          url("/assets/cursors/right.png") 1x,
+          url("/assets/cursors/right@2x.png") 2x
+        )
+        16 16,
+      e-resize;
   }
 }
 .slider {
@@ -154,6 +181,8 @@ body {
   flex-wrap: wrap;
   width: 100%;
   height: auto;
+  background-color: #111;
+  padding: 10px;
   .slide {
     height: 100%;
     display: none;
@@ -164,17 +193,15 @@ body {
       flex-direction: column;
     }
     img {
-      background-color: #111;
-      padding: 15px;
       height: 100%;
       width: 100%;
     }
     p {
-        text-align: left;
-        width: 100%;
-        padding-left: -10px;
-        margin: 0;
-        @extend h2;
+      @extend h2;
+      text-align: left;
+      color: #fff;
+      width: 100%;
+      margin: 10px 0 0 !important;
     }
   }
 }

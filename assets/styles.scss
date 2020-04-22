@@ -23,6 +23,8 @@
 
 // Grid Layout
 .grid {
+  max-width: 1800px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 30px;
@@ -94,7 +96,7 @@ body {
     font-weight: normal;
     // text-transform: uppercase;
     letter-spacing: 0.015em;
-    margin: 0;
+    margin: 0 0 30px 0;
     padding: 0;
   }
   h2 {
@@ -182,7 +184,7 @@ body {
   width: 100%;
   height: auto;
   background-color: #111;
-  padding: 10px;
+  padding: 5px;
   .slide {
     height: 100%;
     display: none;
@@ -204,4 +206,49 @@ body {
       margin: 10px 0 0 !important;
     }
   }
+}
+
+// Mobile styles
+@media screen and (max-width: 900px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+    .intro {
+      grid-column: 1 / span 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    .content {
+      grid-column: 1 / span 1;
+      min-height: auto;
+      .links {
+        margin: 60px 0 0;
+      }
+    }
+  }
+
+  body {
+    margin: 15px;
+    font-size: 18px;
+    h1 {
+      font-size: 18px;
+    }
+    h2 {
+      font-size: 12px;
+    }
+    a {
+      margin-right: 15px;
+    }
+  }
+
+  .slideshow {
+    margin: 60px 0 30px;
+    .slider {
+      width: auto;
+    }
+  }
+  
+
 }

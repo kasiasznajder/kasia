@@ -3,6 +3,7 @@
   font-family: "Forma Nuova Corsiva";
   src: url("/styles/webfonts/formanuova-corsiva.eot");
   src: url("/styles/webfonts/formanuova-corsiva.eot?#iefix") format("embedded-opentype"),
+    url("/styles/webfonts/formanuova-corsiva.woff2") format("woff2"),
     url("/styles/webfonts/formanuova-corsiva.woff") format("woff"),
     url("/styles/webfonts/formanuova-corsiva.ttf") format("truetype");
   font-weight: normal;
@@ -13,6 +14,7 @@
   font-family: "Forma Nuova Neretta";
   src: url("/styles/webfonts/formanuova-neretta.eot");
   src: url("/styles/webfonts/formanuova-neretta.eot?#iefix") format("embedded-opentype"),
+    url("/styles/webfonts/formanuova-neretta.woff2") format("woff2"),
     url("/styles/webfonts/formanuova-neretta.woff") format("woff"),
     url("/styles/webfonts/formanuova-neretta.ttf") format("truetype");
   font-weight: normal;

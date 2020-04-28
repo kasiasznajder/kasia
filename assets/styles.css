@@ -102,10 +102,10 @@ body {
   font-feature-settings: "ss03";
   font-size: 18px;
   letter-spacing: 0.0225em;
-  color: #111111;
+  color: #143e0f;
   margin: 15px 30px;
   line-height: 1.4em;
-  background-color: #a74646;
+  background-color: #f6f1cd;
 }
 
 body h1 {
@@ -118,6 +118,7 @@ body h1 {
 
 body h2, body .slider .slide p, .slider .slide body p {
   font-size: 14px;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin: 0;
@@ -130,7 +131,7 @@ body p {
 }
 
 body a {
-  color: #111111;
+  color: #143e0f;
   text-decoration: none;
   margin-right: 30px;
   cursor: url("/assets/cursors/cursor.png") 32 32, default;
@@ -208,7 +209,7 @@ body .links h2, body .links .slider .slide p, .slider .slide body .links p {
       flex-wrap: wrap;
   width: 100%;
   height: auto;
-  background-color: #111;
+  background-color: #143e0f;
   padding: 5px;
 }
 

@@ -21,6 +21,10 @@
   font-style: normal;
 }
 
+// Variables
+$base-color: #143e0f;
+$bg-color: #f6f1cd;
+
 // Grid Layout
 .grid {
   max-width: 1800px;
@@ -92,10 +96,10 @@ body {
   font-feature-settings: "ss03";
   font-size: 18px;
   letter-spacing: 0.0225em;
-  color: #111111;
+  color: $base-color;
   margin: 15px 30px;
   line-height: 1.4em;
-  background-color: #a74646;
+  background-color: $bg-color;
 
   h1 {
     font-size: 18px;
@@ -107,6 +111,7 @@ body {
 
   h2 {
     font-size: 14px;
+    font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin: 0;
@@ -119,7 +124,7 @@ body {
   }
 
   a {
-    color: #111111;
+    color: $base-color;
     text-decoration: none;
     margin-right: 30px;
     cursor: url("/assets/cursors/cursor.png") 32 32, default;
@@ -189,7 +194,7 @@ body {
   flex-wrap: wrap;
   width: 100%;
   height: auto;
-  background-color: #111;
+  background-color: $base-color;
   padding: 5px;
 
   .slide {

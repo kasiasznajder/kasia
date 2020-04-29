@@ -22,8 +22,8 @@
 }
 
 // Variables
-$base-color: #143e0f;
-$bg-color: linear-gradient(#FFF3D3, #FFD3BB);
+$base-color: #333 ;
+$bg-color: linear-gradient(#F6FCE8, #FBF8DD);
 
 // Grid Layout
 .grid {
@@ -37,8 +37,9 @@ $bg-color: linear-gradient(#FFF3D3, #FFD3BB);
     grid-column: 1 / span 3;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: stretch;
+    min-height: calc(100vh - 30px);
   }
 }
 
@@ -85,6 +86,9 @@ body {
   p {
     padding: 0;
     margin: 0 0 20px;
+    &.foot {
+      margin-top: auto;
+    }
   }
 
   a {

@@ -23,7 +23,7 @@
 
 // Variables
 $base-color: #333 ;
-$bg-color: linear-gradient(#F6FCE8, #FBF8DD);
+$bg-color: #EFECE9;
 
 // Grid Layout
 .grid {
@@ -50,18 +50,17 @@ html {
   cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x,
       url("/assets/cursors/cursor@2x.png") 2x) 16 16,
     default;
-    background-color: #FFF3D3;
 }
 
-.bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-image: $bg-color;
-  z-index: -100;
-}
+// .bg {
+//   position: fixed;
+//   top: 0;
+//   left: 0; 
+//   height: 100vh;
+//   width: 100vw;
+//   background-image: $bg-color;
+//   z-index: -100;
+// }
 
 // Base Type
 body {
@@ -72,9 +71,9 @@ body {
   font-size: 20px;
   letter-spacing: 0.0225em;
   color: $base-color;
-  margin: 15px 30px;
+  margin: 15px 60px;
   line-height: 1.5em;
-
+  background-color: $bg-color;
   h1 {
     font-size: 20px;
     font-weight: normal;
@@ -111,80 +110,90 @@ body {
   }
 }
 
+// Img Rail
+.img-rail {
+  width: calc(100vw - 60px);
+  display: flex;
+  img {
+    height: 300px;
+    margin: 20px 20px 60px 0; 
+  }
+}
+
 // Slideshow
-.slideshow {
-  position: relative;
-  width: 100%;
-  grid-column: 1 / span 2;
-}
+// .slideshow {
+//   position: relative;
+//   width: 100%;
+//   grid-column: 1 / span 2;
+// }
 
-.controls {
-  z-index: 10;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: stretch;
+// .controls {
+//   z-index: 10;
+//   position: absolute;
+//   height: 100%;
+//   width: 100%;
+//   display: flex;
+//   align-items: stretch;
 
-  .prev {
-    display: inline-block;
-    height: 100%;
-    width: 50%;
-    cursor: url("/assets/cursors/left.png") 16 16, w-resize;
-    cursor: url("/assets/cursors/left.svg") 16 16, w-resize;
-    cursor: -webkit-image-set(url("/assets/cursors/left.png") 1x,
-        url("/assets/cursors/left@2x.png") 2x) 16 16,
-      w-resize;
-  }
+//   .prev {
+//     display: inline-block;
+//     height: 100%;
+//     width: 50%;
+//     cursor: url("/assets/cursors/left.png") 16 16, w-resize;
+//     cursor: url("/assets/cursors/left.svg") 16 16, w-resize;
+//     cursor: -webkit-image-set(url("/assets/cursors/left.png") 1x,
+//         url("/assets/cursors/left@2x.png") 2x) 16 16,
+//       w-resize;
+//   }
 
-  .next {
-    display: inline-block;
-    height: 100%;
-    width: 50%;
-    cursor: url("/assets/cursors/right.png") 16 16, e-resize;
-    cursor: url("/assets/cursors/right.svg") 16 16, e-resize;
-    cursor: -webkit-image-set(url("/assets/cursors/right.png") 1x,
-        url("/assets/cursors/right@2x.png") 2x) 16 16,
-      e-resize;
-  }
-}
+//   .next {
+//     display: inline-block;
+//     height: 100%;
+//     width: 50%;
+//     cursor: url("/assets/cursors/right.png") 16 16, e-resize;
+//     cursor: url("/assets/cursors/right.svg") 16 16, e-resize;
+//     cursor: -webkit-image-set(url("/assets/cursors/right.png") 1x,
+//         url("/assets/cursors/right@2x.png") 2x) 16 16,
+//       e-resize;
+//   }
+// }
 
-.slider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-  background-color: $base-color;
-  padding: 5px;
+// .slider {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   width: 100%;
+//   height: auto;
+//   background-color: $base-color;
+//   padding: 5px;
 
-  .slide {
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
+//   .slide {
+//     height: 100%;
+//     display: none;
+//     justify-content: center;
+//     align-items: center;
 
-    &.show {
-      display: flex;
-      flex-direction: column;
-    }
+//     &.show {
+//       display: flex;
+//       flex-direction: column;
+//     }
 
-    img {
-      height: 100%;
-      width: 100%;
-    }
+//     img {
+//       height: 100%;
+//       width: 100%;
+//     }
 
-    p {
-      @extend h2;
-      text-align: left;
-      color: #fff;
-      width: 100%;
-      margin: 10px 0 0 !important;
-    }
-  }
-}
+//     p {
+//       @extend h2;
+//       text-align: left;
+//       color: #fff;
+//       width: 100%;
+//       margin: 10px 0 0 !important;
+//     }
+//   }
+// }
 
 // Mobile styles
 @media screen and (max-width: 900px) {

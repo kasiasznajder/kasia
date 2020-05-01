@@ -27,12 +27,25 @@ $(".prev").click(function () {
 });
 
 $(function () {
-  var colors = ["#5EEB47", "#EB4796", "#7247EB", "#E67519", "#156907", "#F2D70D"];
+  var size = ["380px", "340px", "250px", "310px", "400px"];
 
-  $("a").each(function () {
-    $(this).css(
-      "color",
-      colors[Math.floor(Math.random() * colors.length)]
-    );
+  $("img").each(function () { 
+    $(this).css({
+      "height": size[Math.floor(Math.random() * size.length)]
+    });
   });
 });
+
+function changeColor() {
+  var colors = ["#177308", "#177308", "#4D6749", "#498C20", "#146D06", "#57C614"];
+
+  $("a").each(function () { 
+    $(this).css({
+      transition: 'color 5s ease-in-out',
+      "color": colors[Math.floor(Math.random() * colors.length)]
+    });
+  });
+}
+
+window.onload = changeColor;
+var myVar = setInterval(changeColor, 5000);

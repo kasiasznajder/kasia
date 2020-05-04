@@ -44,7 +44,7 @@ $(document).ready(function () {
       "#593434",
     ];
 
-    $("a").each(function () {
+    $("letter").each(function () {
       $(this).css({
         transition: "color 3s ease-in-out",
         color: colorsTwo[Math.floor(Math.random() * colorsTwo.length)],

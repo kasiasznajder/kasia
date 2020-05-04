@@ -1,10 +1,9 @@
 $(document).ready(function () {
-
   wrapChars();
   resize();
   changeColor();
+  imageExpander();
 
-  
   function resize() {
     var size = ["380px", "340px", "250px", "310px", "400px"];
 
@@ -13,18 +12,18 @@ $(document).ready(function () {
         height: size[Math.floor(Math.random() * size.length)],
       });
     });
-  };
+  }
 
   function wrapChars() {
-
     var letter = $("p, a").contents();
 
-		letter.each(function(){
-				console.log(letter);
-				var $this = $(this);
-				$this.replaceWith($this.text().replace(/(\S)/g, "<letter>$&</letter>"));
-		});
-	};
+    letter.each(function () {
+      if (this.nodeType == 3) {
+        var $this = $(this);
+        $this.replaceWith($this.text().replace(/(\S)/g, "<letter>$&</letter>"));
+      }
+    });
+  }
 
   function changeColor() {
     var colors = [
@@ -42,11 +41,17 @@ $(document).ready(function () {
         color: colors[Math.floor(Math.random() * colors.length)],
       });
     });
-  };
-
-  
-
+  }
 
   var myVar = setInterval(changeColor, 2000);
 
+  function imageExpander() {
+    var img = $("img");
+    bg = $(".bg");
+
+    img.click(function () {
+      $this.toggleClass("expanded");
+      bg.toggleClass("fade");
+    });
+  }
 });

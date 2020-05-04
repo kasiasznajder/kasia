@@ -94,7 +94,7 @@ body {
     }
   }
 
-  letter a {
+  a {
     color: $base-color;
     text-decoration: underline;
     cursor: url("/assets/cursors/cursor.png") 32 32, default;
@@ -123,81 +123,6 @@ body {
     margin: 20px 20px 60px 0; 
   }
 }
-
-// Slideshow
-// .slideshow {
-//   position: relative;
-//   width: 100%;
-//   grid-column: 1 / span 2;
-// }
-
-// .controls {
-//   z-index: 10;
-//   position: absolute;
-//   height: 100%;
-//   width: 100%;
-//   display: flex;
-//   align-items: stretch;
-
-//   .prev {
-//     display: inline-block;
-//     height: 100%;
-//     width: 50%;
-//     cursor: url("/assets/cursors/left.png") 16 16, w-resize;
-//     cursor: url("/assets/cursors/left.svg") 16 16, w-resize;
-//     cursor: -webkit-image-set(url("/assets/cursors/left.png") 1x,
-//         url("/assets/cursors/left@2x.png") 2x) 16 16,
-//       w-resize;
-//   }
-
-//   .next {
-//     display: inline-block;
-//     height: 100%;
-//     width: 50%;
-//     cursor: url("/assets/cursors/right.png") 16 16, e-resize;
-//     cursor: url("/assets/cursors/right.svg") 16 16, e-resize;
-//     cursor: -webkit-image-set(url("/assets/cursors/right.png") 1x,
-//         url("/assets/cursors/right@2x.png") 2x) 16 16,
-//       e-resize;
-//   }
-// }
-
-// .slider {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   flex-wrap: wrap;
-//   width: 100%;
-//   height: auto;
-//   background-color: $base-color;
-//   padding: 5px;
-
-//   .slide {
-//     height: 100%;
-//     display: none;
-//     justify-content: center;
-//     align-items: center;
-
-//     &.show {
-//       display: flex;
-//       flex-direction: column;
-//     }
-
-//     img {
-//       height: 100%;
-//       width: 100%;
-//     }
-
-//     p {
-//       @extend h2;
-//       text-align: left;
-//       color: #fff;
-//       width: 100%;
-//       margin: 10px 0 0 !important;
-//     }
-//   }
-// }
 
 // Mobile styles
 @media screen and (max-width: 900px) {

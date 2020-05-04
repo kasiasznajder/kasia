@@ -2,7 +2,8 @@
 @font-face {
   font-family: "Forma Nuova Corsiva";
   src: url("/styles/webfonts/formanuova-corsiva.eot");
-  src: url("/styles/webfonts/formanuova-corsiva.eot?#iefix") format("embedded-opentype"),
+  src: url("/styles/webfonts/formanuova-corsiva.eot?#iefix")
+      format("embedded-opentype"),
     url("/styles/webfonts/formanuova-corsiva.woff2") format("woff2"),
     url("/styles/webfonts/formanuova-corsiva.woff") format("woff"),
     url("/styles/webfonts/formanuova-corsiva.ttf") format("truetype");
@@ -13,7 +14,8 @@
 @font-face {
   font-family: "Forma Nuova Neretta";
   src: url("/styles/webfonts/formanuova-neretta.eot");
-  src: url("/styles/webfonts/formanuova-neretta.eot?#iefix") format("embedded-opentype"),
+  src: url("/styles/webfonts/formanuova-neretta.eot?#iefix")
+      format("embedded-opentype"),
     url("/styles/webfonts/formanuova-neretta.woff2") format("woff2"),
     url("/styles/webfonts/formanuova-neretta.woff") format("woff"),
     url("/styles/webfonts/formanuova-neretta.ttf") format("truetype");
@@ -32,7 +34,7 @@ $bg-color: #fcf4eb;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 30px;
-
+  // transition: all 2s ease-in-out;
   .intro {
     grid-column: 1 / span 3;
     display: flex;
@@ -43,24 +45,18 @@ $bg-color: #fcf4eb;
   }
 }
 
+
 // General
 html {
   cursor: url("/assets/cursors/cursor.png") 16 16, default;
   cursor: url("/assets/cursors/cursor.svg") 16 16, default;
-  cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x,
-      url("/assets/cursors/cursor@2x.png") 2x) 16 16,
+  cursor: -webkit-image-set(
+        url("/assets/cursors/cursor.png") 1x,
+        url("/assets/cursors/cursor@2x.png") 2x
+      )
+      16 16,
     default;
 }
-
-// .bg {
-//   position: fixed;
-//   top: 0;
-//   left: 0; 
-//   height: 100vh;
-//   width: 100vw;
-//   background-image: $bg-color;
-//   z-index: -100;
-// }
 
 // Base Type
 body {
@@ -95,12 +91,15 @@ body {
   }
 
   a {
-    color: $base-color;
+    color: #177308;
     text-decoration: underline;
     cursor: url("/assets/cursors/cursor.png") 32 32, default;
     cursor: url("/assets/cursors/cursor.svg") 32 32, default;
-    cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x,
-        url("/assets/cursors/cursor@2x.png") 2x) 16 16,
+    cursor: -webkit-image-set(
+          url("/assets/cursors/cursor.png") 1x,
+          url("/assets/cursors/cursor@2x.png") 2x
+        )
+        16 16,
       default;
 
     &:hover {
@@ -108,25 +107,76 @@ body {
     }
   }
 
-  .links h2 {
+  .caption {
+    font-size: 16px;
     margin: 0;
-    line-height: 1em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.1;
+    margin-top: 30px !important;
+    li {
+      margin-bottom: 15px;
+    }
   }
 }
 
 // Img Rail
 .img-rail {
   width: calc(100vw - 60px);
-  display: flex;
-  img {
-    height: 300px;
-    margin: 20px 20px 60px 0; 
+  max-width: 1200px;;
+  display: grid;
+  column-gap: 10px;
+  margin: 20px 0 10px;
+  &.one {
+    grid-template-columns: 10fr 12fr 12fr 13fr 12fr;
   }
+  &.two {
+    grid-template-columns: 11fr 13fr 8fr 10fr 12fr;
+  }
+  .img-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// Expander
+p,
+.img-rail img,
+h1,
+ul {
+  &.fade {
+    opacity: 10%;
+    pointer-events: none;
+  }
+}
+
+body.fade {
+  overflow: hidden;
+}
+
+img.expanded {
+  pointer-events: all !important;
+  z-index: 100;
+  opacity: 1 !important;
+  position: fixed !important;
+  height: 90vh !important;
+  width: auto !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto !important;
 }
 
 // Mobile styles
 @media screen and (max-width: 900px) {
-
   .grid {
     grid-template-columns: 1fr;
 
@@ -159,16 +209,5 @@ body {
     h2 {
       font-size: 12px;
     }
-
   }
-
-  .slideshow {
-    margin: 60px 0 30px;
-
-    .slider {
-      width: auto;
-    }
-  }
-
-
 }

@@ -15,7 +15,7 @@ $(document).ready(function () {
   }
 
   function wrapChars() {
-    var letter = $("a, p.caption, h1, .foot").contents();
+    var letter = $("a, p, h1, .foot, .caption, li").contents();
 
     letter.each(function () {
       if (this.nodeType == 3) {
@@ -32,7 +32,6 @@ $(document).ready(function () {
       "#4D6749",
       "#498C20",
       "#146D06",
-      "#57C614",
     ];
 
     var colorsTwo = [
@@ -46,13 +45,13 @@ $(document).ready(function () {
 
     $("letter").each(function () {
       $(this).css({
-        transition: "color 3s ease-in-out",
-        color: colorsTwo[Math.floor(Math.random() * colorsTwo.length)],
+        transition: "color 1s ease-in-out",
+        color: colors[Math.floor(Math.random() * colors.length)],
       });
     });
   }
 
-  var myVar = setInterval(changeColor, 2000);
+  var myVar = setInterval(changeColor, 1000);
 
   function imageExpander() {
     var img = $("img");

@@ -55,7 +55,7 @@ $(document).ready(function () {
     $("a, h1, .foot, li").each(function () {
       $(this).css({
         transition: "color 150ms ease-in-out",
-        color: colorsThree[Math.floor(Math.random() * colorsThree.length)],
+        color: colors[Math.floor(Math.random() * colors.length)],
       });
     });
   }

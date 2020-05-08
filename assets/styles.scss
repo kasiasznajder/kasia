@@ -131,12 +131,12 @@ body {
   max-width: 1000px;;
   display: grid;
   column-gap: 10px;
-  margin: 20px 0 10px;
+  margin: 30px 0 10px;
   &.one {
-    grid-template-columns: 10fr 12fr 12fr 13fr 12fr;
+    grid-template-columns: 10fr 13fr 9fr 11fr 14fr;
   }
   &.two {
-    grid-template-columns: 11fr 13fr 8fr 10fr 12fr;
+    grid-template-columns: 13fr 10fr 9fr 12fr 10fr;
   }
   .img-wrap {
     display: flex;

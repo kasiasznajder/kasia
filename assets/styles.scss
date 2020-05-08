@@ -24,9 +24,9 @@
 }
 
 // Variables
-$base-color: #222;
+$base-color: #00518B;
 $bg-color: #FBF9F6;
-$base-type: 22px;
+$base-type: 21px;
 
 // Grid Layout
 // .grid {
@@ -84,7 +84,7 @@ body {
     margin: 0 0 20px;
     max-width: 40em;
     &.foot {
-      padding-top: 120px;
+      padding-top: 60px;
       margin: auto 0 0;
       a:hover {
         opacity: 1;
@@ -94,7 +94,7 @@ body {
 
   a {
     color: $base-color;
-    text-decoration: none;
+    text-decoration: underline;
     cursor: url("/assets/cursors/cursor.png") 32 32, default;
     cursor: url("/assets/cursors/cursor.svg") 32 32, default;
     cursor: -webkit-image-set(

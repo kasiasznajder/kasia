@@ -1,29 +1,29 @@
 $(document).ready(function () {
-  // wrapChars();
+  wrapChars();
   // resize();
   changeColor();
   imageExpander();
 
-  function resize() {
-    var size = ["380px", "340px", "250px", "310px", "400px"];
+  // function resize() {
+  //   var size = ["380px", "340px", "250px", "310px", "400px"];
 
-    $("img").each(function () {
-      $(this).css({
-        height: size[Math.floor(Math.random() * size.length)],
-      });
-    });
-  }
-
-  // function wrapChars() {
-  //   var letter = $("a, h1, .foot").contents();
-
-  //   letter.each(function () {
-  //     if (this.nodeType == 3) {
-  //       var $this = $(this);
-  //       $this.replaceWith($this.text().replace(/(\S)/g, "<letter>$&</letter>"));
-  //     }
+  //   $("img").each(function () {
+  //     $(this).css({
+  //       height: size[Math.floor(Math.random() * size.length)],
+  //     });
   //   });
   // }
+
+  function wrapChars() {
+    var letter = $("a, span, h1, .foot").contents();
+
+    letter.each(function () {
+      if (this.nodeType == 3) {
+        var $this = $(this);
+        $this.replaceWith($this.text().replace(/(\S)/g, "<letter>$&</letter>"));
+      }
+    });
+  }
 
   function changeColor() {
     var colors = [
@@ -52,15 +52,22 @@ $(document).ready(function () {
       "#FDCD84",
     ];
 
-    $("a, h1, .foot, li").each(function () {
+    var colorsFour = [
+      "#279CF1",
+      "#5386D2",
+      "#6DAAD6",
+      "#4C8AE7"
+    ];
+
+    $("letter").each(function () {
       $(this).css({
-        transition: "color 150ms ease-in-out",
-        color: colors[Math.floor(Math.random() * colors.length)],
+        transition: "color 500ms ease-in-out",
+        color: colorsFour[Math.floor(Math.random() * colorsFour.length)],
       });
     });
   }
 
-  // var myVar = setInterval(changeColor, 1500);
+  var myVar = setInterval(changeColor, 1000);
 
   function imageExpander() {
     var img = $(".img-wrap"),

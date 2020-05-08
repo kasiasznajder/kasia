@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  wrapChars();
+  // wrapChars();
   // resize();
   changeColor();
   imageExpander();
@@ -14,16 +14,16 @@ $(document).ready(function () {
     });
   }
 
-  function wrapChars() {
-    var letter = $("a, p, h1, .foot, .caption, li").contents();
+  // function wrapChars() {
+  //   var letter = $("a, h1, .foot").contents();
 
-    letter.each(function () {
-      if (this.nodeType == 3) {
-        var $this = $(this);
-        $this.replaceWith($this.text().replace(/(\S)/g, "<letter>$&</letter>"));
-      }
-    });
-  }
+  //   letter.each(function () {
+  //     if (this.nodeType == 3) {
+  //       var $this = $(this);
+  //       $this.replaceWith($this.text().replace(/(\S)/g, "<letter>$&</letter>"));
+  //     }
+  //   });
+  // }
 
   function changeColor() {
     var colors = [
@@ -32,7 +32,7 @@ $(document).ready(function () {
       "#4D6749",
       "#498C20",
       "#146D06",
-    ];
+    ]
 
     var colorsTwo = [
       "#F2AA3C",
@@ -43,23 +43,32 @@ $(document).ready(function () {
       "#593434",
     ];
 
-    $("letter").each(function () {
+    var colorsThree = [
+      "#A07272",
+      "#738BCD",
+      "#F87970",
+      "#F0AEC7",
+      "#93C3A3",
+      "#FDCD84",
+    ];
+
+    $("a, h1, .foot, li").each(function () {
       $(this).css({
-        transition: "color 1s ease-in-out",
-        color: colors[Math.floor(Math.random() * colors.length)],
+        transition: "color 150ms ease-in-out",
+        color: colorsThree[Math.floor(Math.random() * colorsThree.length)],
       });
     });
   }
 
-  var myVar = setInterval(changeColor, 1000);
+  // var myVar = setInterval(changeColor, 1500);
 
   function imageExpander() {
-    var img = $("img");
-    bg = $("p, .img-wrap img, h1, body, ul");
+    var img = $(".img-wrap"),
+        bg = $("p, .img-wrap img, h1, body, ul");
 
     img.click(function () {
       bg.toggleClass("fade");
       $(this).toggleClass("expanded");
     });
-  }
+  };
 });

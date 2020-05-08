@@ -2,7 +2,8 @@
 @font-face {
   font-family: "Forma Nuova Corsiva";
   src: url("/styles/webfonts/formanuova-corsiva.eot");
-  src: url("/styles/webfonts/formanuova-corsiva.eot?#iefix") format("embedded-opentype"),
+  src: url("/styles/webfonts/formanuova-corsiva.eot?#iefix")
+      format("embedded-opentype"),
     url("/styles/webfonts/formanuova-corsiva.woff2") format("woff2"),
     url("/styles/webfonts/formanuova-corsiva.woff") format("woff"),
     url("/styles/webfonts/formanuova-corsiva.ttf") format("truetype");
@@ -13,7 +14,8 @@
 @font-face {
   font-family: "Forma Nuova Neretta";
   src: url("/styles/webfonts/formanuova-neretta.eot");
-  src: url("/styles/webfonts/formanuova-neretta.eot?#iefix") format("embedded-opentype"),
+  src: url("/styles/webfonts/formanuova-neretta.eot?#iefix")
+      format("embedded-opentype"),
     url("/styles/webfonts/formanuova-neretta.woff2") format("woff2"),
     url("/styles/webfonts/formanuova-neretta.woff") format("woff"),
     url("/styles/webfonts/formanuova-neretta.ttf") format("truetype");
@@ -22,69 +24,38 @@
 }
 
 // Variables
-$base-color: #143e0f;
-$bg-color: #f6f1cd;
+$base-color: #00518B;
+$bg-color: #FBF9F6;
+$base-type: 21px;
 
 // Grid Layout
-.grid {
-  max-width: 1800px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  column-gap: 30px;
+// .grid {
+//   max-width: 1800px;
+//   margin: 0 auto;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+//   column-gap: 30px;
+//   // transition: all 2s ease-in-out;
+//   .intro {
+//     grid-column: 1 / span 3;
+//     display: flex;
+//     flex-direction: column;
+//     // justify-content: space-between;
+//     align-items: stretch;
+//     min-height: calc(100vh - 30px);
+//   }
+// }
 
-  .intro {
-    grid-column: 1 / span 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-
-  .content {
-    grid-column: 4 / span 2;
-    justify-self: end;
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 30px);
-
-    .links {
-      margin-top: auto;
-    }
-
-    .clients .client-list {
-      display: grid;
-      grid-template-columns: 1fr;
-      column-gap: 30px;
-
-      ul {
-        list-style: none;
-        margin: 10px 0 0;
-        padding: 0;
-
-        li {
-          display: inline;
-
-          //   margin-bottom: 5px;
-          &::after {
-            content: ", ";
-          }
-
-          &:last-child::after {
-            content: "";
-          }
-        }
-      }
-    }
-  }
-}
 
 // General
 html {
   cursor: url("/assets/cursors/cursor.png") 16 16, default;
   cursor: url("/assets/cursors/cursor.svg") 16 16, default;
-  cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x,
-      url("/assets/cursors/cursor@2x.png") 2x) 16 16,
+  cursor: -webkit-image-set(
+        url("/assets/cursors/cursor.png") 1x,
+        url("/assets/cursors/cursor@2x.png") 2x
+      )
+      16 16,
     default;
 }
 
@@ -94,183 +65,170 @@ body {
   -moz-font-feature-settings: "ss03";
   -webkit-font-feature-settings: "ss03";
   font-feature-settings: "ss03";
-  font-size: 18px;
+  font-size: $base-type;
   letter-spacing: 0.0225em;
   color: $base-color;
   margin: 15px 30px;
-  line-height: 1.4em;
+  line-height: 1.5em;
   background-color: $bg-color;
-
   h1 {
-    font-size: 18px;
+    font-size: $base-type;
     font-weight: normal;
     letter-spacing: 0.015em;
-    margin: 0 0 30px 0;
-    padding: 0;
-  }
-
-  h2 {
-    font-size: 14px;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0;
+    margin: 0 0 20px 0;
     padding: 0;
   }
 
   p {
     padding: 0;
-    margin: 5px 0 30px;
+    margin: 0 0 20px;
+    max-width: 40em;
+    &.foot {
+      padding-top: 60px;
+      margin: auto 0 0;
+      a:hover {
+        opacity: 1;
+      }
+    }
   }
 
   a {
     color: $base-color;
-    text-decoration: none;
-    margin-right: 30px;
+    text-decoration: underline;
     cursor: url("/assets/cursors/cursor.png") 32 32, default;
     cursor: url("/assets/cursors/cursor.svg") 32 32, default;
-    cursor: -webkit-image-set(url("/assets/cursors/cursor.png") 1x,
-        url("/assets/cursors/cursor@2x.png") 2x) 16 16,
+    cursor: -webkit-image-set(
+          url("/assets/cursors/cursor.png") 1x,
+          url("/assets/cursors/cursor@2x.png") 2x
+        )
+        16 16,
       default;
-
-    &:last-child {
-      margin-right: 0;
-    }
 
     &:hover {
       opacity: 0.6;
     }
   }
 
-  .links h2 {
+  .caption {
+    font-size: 16px;
     margin: 0;
-    line-height: 1em;
-  }
-}
-
-// Slideshow
-.slideshow {
-  position: relative;
-  width: 100%;
-  grid-column: 1 / span 2;
-}
-
-.controls {
-  z-index: 10;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: stretch;
-
-  .prev {
-    display: inline-block;
-    height: 100%;
-    width: 50%;
-    cursor: url("/assets/cursors/left.png") 16 16, w-resize;
-    cursor: url("/assets/cursors/left.svg") 16 16, w-resize;
-    cursor: -webkit-image-set(url("/assets/cursors/left.png") 1x,
-        url("/assets/cursors/left@2x.png") 2x) 16 16,
-      w-resize;
   }
 
-  .next {
-    display: inline-block;
-    height: 100%;
-    width: 50%;
-    cursor: url("/assets/cursors/right.png") 16 16, e-resize;
-    cursor: url("/assets/cursors/right.svg") 16 16, e-resize;
-    cursor: -webkit-image-set(url("/assets/cursors/right.png") 1x,
-        url("/assets/cursors/right@2x.png") 2x) 16 16,
-      e-resize;
-  }
-}
-
-.slider {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;
-  background-color: $base-color;
-  padding: 5px;
-
-  .slide {
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-
-    &.show {
-      display: flex;
-      flex-direction: column;
+  ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.1;
+    margin-top: 30px !important;
+    li {
+      margin-bottom: 15px;
     }
+  }
+}
 
+// Img Rail
+.img-rail {
+  width: calc(100vw - 60px);
+  max-width: 1000px;;
+  display: grid;
+  column-gap: 10px;
+  margin: 30px 0 10px;
+  &.one {
+    grid-template-columns: 10fr 13fr 9fr 11fr 14fr;
+  }
+  &.two {
+    grid-template-columns: 13fr 10fr 9fr 12fr 10fr;
+  }
+  .img-wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
     img {
-      height: 100%;
       width: 100%;
+      transition: all 100ms ease-in-out;
+      &:hover{
+        opacity: 0.8;
+        color: #4D6749;
+      }
     }
+  }
+}
 
-    p {
-      @extend h2;
-      text-align: left;
-      color: #fff;
-      width: 100%;
-      margin: 10px 0 0 !important;
-    }
+// Expander
+p,
+.img-rail img,
+h1,
+ul {
+  &.fade {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+body.fade {
+  overflow: hidden;
+}
+
+.img-wrap.expanded {
+  pointer-events: all !important;
+  z-index: 100;
+  opacity: 1 !important;
+  position: fixed !important;
+  height: 100vh !important;
+  width: 100vw !important;
+  // background-color: red;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  margin: auto !important;
+  img {
+    opacity: 1 !important;
+    height: 90vh;
+    max-height: 1000px;
+    width: auto;
+  }
+  p {
+    opacity: 1;
+    margin-top: 5px;
   }
 }
 
 // Mobile styles
 @media screen and (max-width: 900px) {
-
-  .grid {
-    grid-template-columns: 1fr;
-
-    .intro {
-      grid-column: 1 / span 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: stretch;
-    }
-
-    .content {
-      grid-column: 1 / span 1;
-      min-height: auto;
-
-      .links {
-        margin: 60px 0 0;
-      }
-    }
-  }
-
   body {
     margin: 15px;
     font-size: 18px;
-
     h1 {
       font-size: 18px;
     }
-
     h2 {
       font-size: 12px;
     }
-
-    a {
-      margin-right: 15px;
+  }
+  .img-rail {
+    width: calc(100vw - 30px);
+    margin: 20px 0 10px;
+    &.one {
+      grid-template-columns: 1fr 1fr;
+    }
+    &.two {
+      grid-template-columns: 1fr 1fr;
+    }
+    .img-wrap {
+      img {
+        &:hover{
+          opacity: 1;
+        }
+      }
     }
   }
-
-  .slideshow {
-    margin: 60px 0 30px;
-
-    .slider {
-      width: auto;
+  .img-wrap.expanded {
+    img {
+      opacity: 1 !important;
+      height: auto;
+      width: 90vw !important;
     }
   }
-
-
 }

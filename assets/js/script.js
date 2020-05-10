@@ -15,7 +15,7 @@ $(document).ready(function () {
   // }
 
   function wrapChars() {
-    var letter = $("a, span, h1, .foot").contents();
+    var letter = $("a, span, h1, .foot, .caption").contents();
 
     letter.each(function () {
       if (this.nodeType == 3) {
@@ -71,27 +71,25 @@ $(document).ready(function () {
 
   function imageExpander() {
     var img = $(".img-wrap"),
-        bg = $(".grid"),
+        bg = $("body, .grid"),
         modal = $(".modal");
         
 
     img.click(function () {
       var lowRes = $(this).children('img').attr('src'),
           hiRes = lowRes.replace('low', 'high'),
-          modalContent = $('<img src='+hiRes+'>');
+          caption = $(this).children('p').text(),
+          modal = $('<img class="expanded" src='+hiRes+'><p class="expanded">'+caption+'</p>').hide().fadeIn(100);
 
       bg.addClass("fade");
-      modal.addClass("expanded");
-      $('body').append(modal);
+      $(".modal").addClass("expanded").append(modal);
     });
 
     modal.click(function () {
-      $(this).remove();
       bg.removeClass("fade");
       modal.removeClass("expanded");
+      $("img, p").remove(".expanded");
 
-      console.log("test");
-      
     });
   };
 });

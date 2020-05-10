@@ -61,21 +61,37 @@ $(document).ready(function () {
 
     $("letter").each(function () {
       $(this).css({
-        transition: "color 500ms ease-in-out",
+        transition: "color 1400ms ease-in-out",
         color: colorsFour[Math.floor(Math.random() * colorsFour.length)],
       });
     });
   }
 
-  var myVar = setInterval(changeColor, 1000);
+  var myVar = setInterval(changeColor, 700);
 
   function imageExpander() {
     var img = $(".img-wrap"),
-        bg = $("p, .img-wrap img, h1, body, ul");
+        bg = $(".grid"),
+        modal = $(".modal");
+        
 
     img.click(function () {
-      bg.toggleClass("fade");
-      $(this).toggleClass("expanded");
+      var lowRes = $(this).children('img').attr('src'),
+          hiRes = lowRes.replace('low', 'high'),
+          modalContent = $('<img src='+hiRes+'>');
+
+      bg.addClass("fade");
+      modal.addClass("expanded");
+      $('body').append(modal);
+    });
+
+    modal.click(function () {
+      $(this).remove();
+      bg.removeClass("fade");
+      modal.removeClass("expanded");
+
+      console.log("test");
+      
     });
   };
 });

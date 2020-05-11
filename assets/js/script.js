@@ -15,7 +15,7 @@ $(document).ready(function () {
   // }
 
   function wrapChars() {
-    var letter = $("a, span, h1, .foot").contents();
+    var letter = $("a, span, h1, .foot, .caption").contents();
 
     letter.each(function () {
       if (this.nodeType == 3) {
@@ -61,21 +61,35 @@ $(document).ready(function () {
 
     $("letter").each(function () {
       $(this).css({
-        transition: "color 500ms ease-in-out",
+        transition: "color 1400ms ease-in-out",
         color: colorsFour[Math.floor(Math.random() * colorsFour.length)],
       });
     });
   }
 
-  var myVar = setInterval(changeColor, 1000);
+  var myVar = setInterval(changeColor, 700);
 
   function imageExpander() {
     var img = $(".img-wrap"),
-        bg = $("p, .img-wrap img, h1, body, ul");
+        bg = $("body, .grid"),
+        modal = $(".modal");
+        
 
     img.click(function () {
-      bg.toggleClass("fade");
-      $(this).toggleClass("expanded");
+      var lowRes = $(this).children('img').attr('src'),
+          hiRes = lowRes.replace('low', 'high'),
+          caption = $(this).children('p').text(),
+          modal = $('<img class="expanded" src='+hiRes+'><p class="expanded">'+caption+'</p>').hide().fadeIn(100);
+
+      bg.addClass("fade");
+      $(".modal").addClass("expanded").append(modal);
+    });
+
+    modal.click(function () {
+      bg.removeClass("fade");
+      modal.removeClass("expanded");
+      $("img, p").remove(".expanded");
+
     });
   };
 });

@@ -53,10 +53,12 @@ $(document).ready(function () {
     ];
 
     var colorsFour = [
-      "#279CF1",
-      "#5386D2",
-      "#6DAAD6",
-      "#4C8AE7"
+      "#247DE0",
+      "#3686E0",
+      "#4A91E0",
+      "#65A2E5",
+      "#86BEFC",
+      "#C5DFFC",
     ];
 
     $("letter").each(function () {
